@@ -11,7 +11,7 @@ export default async function Navbar() {
             <Link href="/sign-in" className="text-xl font-bold">
 				<Button variant="default">Sign In</Button>
 			</Link>
-            <Link href="/sign-in" className="text-xl font-bold">
+            <Link href="/sign-up" className="text-xl font-bold">
 				<Button variant="default">Sign Up</Button>
 			</Link>
             </div>

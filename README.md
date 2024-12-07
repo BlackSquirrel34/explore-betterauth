@@ -6,7 +6,8 @@ Although next.js is a fullstack framework, it does not (really) come out of the 
 
 I was on the lookout for solutions that 
 - are open-source
-- at least allow you owning your data and being in charge of your auth
+- allows you owning your data and being in charge of your auth
+- has security features such as rate limiting
 - do not require a subscription to some SaaS somewhere far away
 - give a great developer experience (I am not into suffering)
 - do not require setting up a dedicated auth-server in the backend (although this could be an option for huger projects)
@@ -20,4 +21,11 @@ Once of the first tutorials about better-auth is available at https://www.youtub
 with the git repository at
 https://github.com/adityasinghcodes/better-auth-nextjs
 
-I decidet to first re-built along these lines an app and then, as soon as I feel confident, integrate the lib in my other projects.
+This blogpost about setting up better-auth with email and password:
+https://dev.to/daanish2003/email-and-password-auth-using-betterauth-nextjs-prisma-shadcn-and-tailwindcss-hgc
+
+and also this Blogpost about integrating Resend into a Next.js with better-auth:
+https://dev.to/daanish2003/email-verification-using-betterauth-nextjs-and-resend-37gn
+with the Github repository: https://github.com/Daanish2003/better_auth_nextjs
+
+I decided to first re-built along these lines an app and then, as soon as I feel confident, integrate the lib in my other projects.
