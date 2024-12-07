@@ -12,7 +12,7 @@ I was on the lookout for solutions that
 - do not require setting up a dedicated auth-server in the backend (although this could be an option for huger projects)
 
 
-Personally, I explored auth.js (fonext.auth) for a while, as it was featured seemingly everywhere, and came to a negative conclusion. Although I digged into the docs and meticusously folled along with an array of tutorials that promised to be up and running with authentication within a few minutes, somehow it was not working for me. At least not without investing significant time. That's why I decided hey instead debugging stuff that was promised to work so easily I could just invest in learning something more stable and reliable.
+Personally, I explored auth.js (formerly next.auth) for a while, as it was featured seemingly everywhere, and came to a negative conclusion. Although I digged into the docs and meticusously folled along with an array of tutorials that promised to be up and running with authentication within a few minutes, somehow it was not working for me. At least not without investing significant time. That's why I decided hey instead debugging stuff that was promised to work so easily I could just invest in learning something more stable and reliable.
 
 #### That's when I came across better-auth and decided to give it a try. Currently, there are very few tutorials on this library, as it is a very recent development, heavily inspried by auth.js (next.auth).
 
