@@ -2,12 +2,12 @@
 
 Although next.js is a fullstack framework, it does not (really) come out of the box with a solution to the problem of authentication. You know, the thing with the colorful signup, signout, forgot-password buttons. 
 
-#### There are a few existing solutions to this problem. But somehow, I was not really happy about the existing ones. And hey, it's not the case that the Login/Logout thing in web applications is something that suddenly, maybe just this season, was discovered to be the dernier crie.
+#### There are a few existing solutions to this problem. But somehow, I was not really happy about the existing ones. And hey, it's not the case that the Login/Logout thing in web applications is something that suddenly, maybe just this season, was discovered to be the 'dernier crie'.
 
 I was on the lookout for solutions that 
 - are open-source
-- allows you owning your data and being in charge of your auth
-- has security features such as rate limiting
+- allow owning your data and being in charge of your auth
+- have security features such as rate limiting
 - do not require a subscription to some SaaS somewhere far away
 - give a great developer experience (I am not into suffering)
 - do not require setting up a dedicated auth-server in the backend (although this could be an option for huger projects)
@@ -20,6 +20,10 @@ Personally, I explored auth.js (formerly next.auth) for a while, as it was featu
 Once of the first tutorials about better-auth is available at https://www.youtube.com/watch?v=V--T0q9FrEw
 with the git repository at
 https://github.com/adityasinghcodes/better-auth-nextjs
+
+and this was even a bit earlier:
+https://www.youtube.com/watch?v=BiVwYIUophk
+with Github repo at: https://github.com/candraKriswinarto/nextsecure
 
 This blogpost about setting up better-auth with email and password:
 https://dev.to/daanish2003/email-and-password-auth-using-betterauth-nextjs-prisma-shadcn-and-tailwindcss-hgc
