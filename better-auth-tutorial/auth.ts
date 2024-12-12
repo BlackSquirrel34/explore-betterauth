@@ -5,6 +5,7 @@ import prisma from "@/src/lib/prisma";
 // but instead:
 import { resend } from "@/src/lib/resend";
 import { openAPI } from "better-auth/plugins";
+import { EmailTemplate } from "@/src/app/email-templates/signuplink"
 
 export const auth = betterAuth({
     database: prismaAdapter(prisma, {
@@ -22,11 +23,11 @@ export const auth = betterAuth({
             await resend.emails.send({
               from: "Acme <onboarding@resend.dev>", // You could add your custom domain
               // to: user.email, // email of the user to want to end
-              // this won't work without a domain. expcept a resend-internal address
+              // this won't work without a domain. except a resend-internal address
               to: ['delivered@resend.dev'],
-              subject: "Email Verification", // Main subject of the email
-              html: `Click the link to verify your email: ${url}`, // Content of the email
-              // you could also use "React:" option for sending the email template and there content to user
+              subject: "Email Signup Link", // Main subject of the email
+              // html: `Click the link to verify your email: ${url}`, // Content of the email
+              react: EmailTemplate({ userName: String(user.name), senderEmail: String(process.env.EMAIL_FROM), url: String(url)}),
             });
           },
         },
