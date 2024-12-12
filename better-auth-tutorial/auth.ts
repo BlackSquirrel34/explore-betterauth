@@ -19,7 +19,9 @@ export const auth = betterAuth({
       emailVerification: {
         sendOnSignUp: true,
         autoSignInAfterVerification: true,
-        sendVerificationEmail: async ({ user, url }) => {
+        sendVerificationEmail: async ({ user, token }) => {
+          const verificationUrl = `${process.env.BETTER_AUTH_URL}/api/auth/verify-email?token=${token}&callbackURL=${process.
+            env.EMAIL_VERIFICATION_CALLBACK_URL}`;
             await resend.emails.send({
               from: "Acme <onboarding@resend.dev>", // You could add your custom domain
               // to: user.email, // email of the user to want to end
@@ -27,7 +29,7 @@ export const auth = betterAuth({
               to: ['delivered@resend.dev'],
               subject: "Email Signup Link", // Main subject of the email
               // html: `Click the link to verify your email: ${url}`, // Content of the email
-              react: EmailTemplate({ userName: String(user.name), senderEmail: String(process.env.EMAIL_FROM), url: String(url)}),
+              react: EmailTemplate({ userName: String(user.name), senderEmail: String(process.env.EMAIL_FROM), url: String(verificationUrl)}),
             });
           },
         },
