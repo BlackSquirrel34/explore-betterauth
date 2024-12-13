@@ -27,10 +27,12 @@ export const auth = betterAuth({
               // to: user.email, // email of the user to want to end
               // this won't work without a domain. except a resend-internal address
               to: ['delivered@resend.dev'],
-              subject: "Email Signup Link", // Main subject of the email
+              subject: "New Email Signup Link", // Main subject of the email
               // html: `Click the link to verify your email: ${url}`, // Content of the email
               react: EmailTemplate({ userName: String(user.name), senderEmail: String(process.env.EMAIL_FROM), url: String(verificationUrl)}),
             });
           },
         },
 } satisfies BetterAuthOptions);
+
+export type Session = typeof auth.$Infer.Session; 
