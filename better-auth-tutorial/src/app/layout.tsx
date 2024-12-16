@@ -28,8 +28,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth.api.getSession({
+    query: {
+      disableCookieCache: true,
+    },
     headers: await headers(),
   });
+  console.log(session);
 
   return (
     <html lang="en">

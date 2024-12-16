@@ -43,6 +43,7 @@ export default function SignIn() {
 	const handleCredentialsSignIn = async (
 		values: z.infer<typeof signInSchema>
 	) => {
+		console.log(session);
 		await authClient.signIn.email(
 			{
 				email: values.email,
@@ -138,6 +139,7 @@ export default function SignIn() {
 							</LoadingButton>
 						</form>
 					</Form>
+
 					<div className="mt-4">
 						<LoadingButton
 							pending={pendingGithub}
@@ -147,6 +149,7 @@ export default function SignIn() {
 							Continue with GitHub
 						</LoadingButton>
 					</div>
+
 					<div className="mt-4 text-center text-sm">
 						<Link
 							href="/forgot-password"
