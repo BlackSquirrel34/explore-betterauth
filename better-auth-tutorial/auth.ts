@@ -30,7 +30,7 @@ export const auth = betterAuth({
         },
         changeEmail: {
           enabled: true,
-          sendChangeEmailVerification: async ({ newEmail, user, url }) => {
+          sendChangeEmailVerification: async ({ user, newEmail, url, token }, request) => {
             await resend.emails.send({
               from: "Acme <onboarding@resend.dev>", // You could add your custom domain
               // to: newEmail, // email of the user to want to end

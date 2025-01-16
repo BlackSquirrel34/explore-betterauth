@@ -1,7 +1,27 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+First, make sure there is inside the package.json among the scripts this line:
 
+```
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "prisma": "prisma generate"
+}
+```
+
+The cd to better-auth-tutorial and go like:
+
+```
+pnpm run prisma
+````
+
+#### Note that for this to work you also need a valid API key for resend in some .env file.
+
+After this is done, you can proceed regularly.
 First, run the development server:
 
 ```bash

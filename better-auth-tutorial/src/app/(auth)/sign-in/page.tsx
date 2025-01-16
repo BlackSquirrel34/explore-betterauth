@@ -43,7 +43,6 @@ export default function SignIn() {
 	const handleCredentialsSignIn = async (
 		values: z.infer<typeof signInSchema>
 	) => {
-		console.log(session);
 		await authClient.signIn.email(
 			{
 				email: values.email,
