@@ -17,11 +17,46 @@ The cd to better-auth-tutorial and go like:
 
 ```
 pnpm run prisma
-````
+```
 
-#### Note that for this to work you also need a valid API key for resend in some .env file.
+After this is done, there are still some prerequisites. Basically, you need a .env file stuffed with all the valid values corresponding to this as a sample:
 
-After this is done, you can proceed regularly.
+```
+# often critical: whether atlas allows connections from your IP. if its a hoe IP it probably switches. You can also enable from all IP's from your Atlas account
+DATABASE_URL="mongodb+srv://<user>:<password>@cluster1.js7ky.mongodb.net/betterauth?retryWrites=true&w=majority&appName=Cluster1"
+# for a local mongoDB:
+# DATABASE_URL="mongodb://127.0.0.1:27017/dbserver"
+
+# base url of your website. your domain in production
+BETTER_AUTH_URL=http://localhost:3000 
+
+# Auth Secret
+BETTER_AUTH_SECRET=<some-crypto-secure-large-string>
+# will change to your domain when in production
+EMAIL_VERIFICATION_CALLBACK_URL=http://localhost:3000/email-verified
+
+EMAIL_FROM="bananas@com"
+RESEND_API_KEY=<obtain-this-key-from-resend-account>
+
+
+# Github Authentication
+GITHUB_CLIENT_ID=O<some-id>
+GITHUB_CLIENT_SECRET=<some-secret>
+```
+
+
+#### That means, you'll need a setup with:
+1) A MongoDB you can connect to running somewhere. (In our case, Atlas)
+
+2) An app created in your GitHub Account for the GitHub authentication to run without complaints.
+
+3) A Resend Account
+
+4) You have generated a secret for better-auth
+
+#### Setup and Prereq's all good? Then let's go!! ;)
+
+
 First, run the development server:
 
 ```bash
